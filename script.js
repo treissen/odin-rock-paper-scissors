@@ -1,11 +1,10 @@
 //  global variables
-// compSelection = computerPlay();     // call computer play function set to Computer Play
-// userSelelction = userInput();        // call user input function set to userSelection
+
 let compScore = 0
 let userScore = 0
 let roundCount = 0
 let winner = ''
-// let scoreBoard = 'user score: ' + userScore + ' & computer score: ' + compScore
+
 // computer choice
 
 function computerPlay() {
@@ -26,7 +25,7 @@ function userInput() {
 
 function playRound(userSelection, compSelection) {
       
-    // if else statements checking who wins
+    // if  statements checking who wins
 
     if(userSelection === compSelection) {
         result = 'this round is a tie'
@@ -49,8 +48,6 @@ function playRound(userSelection, compSelection) {
     }
     return result 
     }
-// playRound(userSelection, compSelection);
-// console.log(result);
 
 function gameWinner() {     //this will run after the game() loops 5 times and will log who won and final score
     if(compScore > userScore) {
@@ -67,22 +64,20 @@ function gameWinner() {     //this will run after the game() loops 5 times and w
 
 //  game() needs to loop through  playRound(userSelection, compSelection) 5 times
 function game(){
-    for(let roundCount = 1; roundCount < 6; roundCount++) {         // start roundcount at 1 instead of zero so it logs what round just played
-        userSelelction = userInput();        // call user input function set to userSelection
-        console.log('you chose: ' + userSelection); // log user selection
-        compSelection = computerPlay();     // call computer play function set to Computer Play
-        console.log('Computer selected ' + compSelection); // log computer selection
-        playRound(userSelection,compSelection);
-        console.log('result: ' + result) 
-        console.log('userScore: ' + userScore) 
-        console.log('compScore: ' + compScore)
-        console.log('that was round ' + roundCount)
-        
-        // console.log(scoreBoard)
+    for(let roundCount = 1; roundCount < 6; roundCount++) {   // start roundcount at 1 instead of zero so it logs what round just played
+        userSelelction = userInput();                         // call user input function set to userSelection
+        console.log('you chose: ' + userSelection);           // log user selection
+        compSelection = computerPlay();                       // call computer play function set to Computer Play
+        console.log('Computer selected ' + compSelection);    // log computer selection
+        playRound(userSelection,compSelection);               // run playround function
+        console.log('result: ' + result)                      //log result of round
+        console.log('userScore: ' + userScore)                // log user score
+        console.log('compScore: ' + compScore)                // log compscore
+        console.log('that was round ' + roundCount)           // log what round was just played
     }
 
     // after loops through 5 times runs function to log who won the match
-    gameWinner();
-    console.log('the winner of the game is......' + winner)
+    gameWinner()
+    console.log('the winner of the game is......' + winner) 
 }
-game();
+game(); // call game function
