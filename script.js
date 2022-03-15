@@ -1,76 +1,88 @@
-// lay out pseudo code first in plain english
+//  global variables
+// compSelection = computerPlay();     // call computer play function set to Computer Play
+// userSelelction = userInput();        // call user input function set to userSelection
+let compScore = 0
+let userScore = 0
+let roundCount = 0
+let winner = ''
+// let scoreBoard = 'user score: ' + userScore + ' & computer score: ' + compScore
+// computer choice
 
-let playerScore = 0;
-let compScore = 0;
-let roundCount = 0;
-let buttons = document.querySelectorAll('input');
-let playerSelection =''
-buttons.forEach(buttons => buttons.addEventListener('click', (e) => {
-    playerSelection = e.target.value;
-}))
-console.log(playerSelection);
-
-
-// if rounds < 5 run play round
-if (roundCount < 5 && compScore < 3 && playerScore < 3){
-    playRound();
+function computerPlay() {
+    let compArray = ['rock', 'paper', 'scissors'];
+    compSelection = compArray[Math.floor(Math.random() * compArray.length)];
+    return compSelection
 }
 
-// function winner() {
-//     if(compScore === 3) {
-//         alert('the computer won the match');
-//     } else if(playerScore === 3) { 
-//         alert('you won the match');
-//     }   
-// }
-// winner();
+// user input
 
-function playRound() {
-    function computerPlay() {
-        compArray = ['rock', 'paper', 'scissors']
-        computerSelection = compArray[Math.floor(Math.random() * compArray.length)]
-        console.log('computer selected ' + computerSelection)
-        return computerSelection;
-    }
-    computerPlay();
-
-    buttons.forEach(buttons => buttons.addEventListener('click', (e) => {
-        playerSelection = e.target.value;
-    }))
-    console.log(playerSelection);
-
-    // function choice() {
-    // let playerSelection = addEventListener.buttons('click', )
-    // console.log('player selected ' + playerSelection);
-    // return playerSelection;
-    // }
-    // choice();
-
-    function checkWinner() {
-        if((computerSelection === 'scissors' && playerSelection === 'paper') 
-            || (computerSelection === 'rock' && playerSelection === 'scissors') 
-            || (computerSelection === 'paper' && playerSelection === 'rock')) {
-                var result = 'you lose!';
-                return compScore += 1;
-        } else if((computerSelection === 'paper' && playerSelection === 'scissors') 
-            || (computerSelection === 'scissors' && playerSelection === 'rock') 
-            || (computerSelection === 'rock' && playerSelection === 'paper')) {
-                var result = 'you win!';
-                playerScore += 1;
-        } else {
-            var result = 'it is a tie!';
-        }
-        console.log(result);
-        console.log('player score: ' + playerScore);
-        console.log('computer score: ' + compScore);
-        return result
-    }
-    checkWinner();
-    
-    roundCount =+ 1;
+function userInput() {
+    userPrompt = prompt('rock, paper, or scissors?');
+    userSelection = userPrompt.toLowerCase();
+    return userSelection
 }
 
+// play one round
 
+function playRound(userSelection, compSelection) {
+      
+    // if else statements checking who wins
 
+    if(userSelection === compSelection) {
+        result = 'this round is a tie'
+    } 
+    if(
+        (userSelection === "rock" && compSelection === "scissors") || 
+        (userSelection === "paper" && compSelection === "rock") ||
+        (userSelection === "scissors" && compSelection === "paper")
+    ) {
+        result =  'User wins this round'
+        ++userScore
+    }
+    if(
+        (userSelection === "scissors" && compSelection === "rock") || 
+        (userSelection === "rock" && compSelection === "paper") ||
+        (userSelection === "paper" && compSelection === "scissors")
+    ) {
+        result =  'computer wins this round';
+        ++compScore
+    }
+    return result 
+    }
+// playRound(userSelection, compSelection);
+// console.log(result);
 
+function gameWinner() {     //this will run after the game() loops 5 times and will log who won and final score
+    if(compScore > userScore) {
+        winner = 'computer';
+    }
+    if(compScore < userScore) {
+        winner = 'user';
+    }
+    if(compScore === userScore) {
+        winner = 'tie';
+    }
+    return winner;
+}
 
+//  game() needs to loop through  playRound(userSelection, compSelection) 5 times
+function game(){
+    for(let roundCount = 1; roundCount < 6; roundCount++) {         // start roundcount at 1 instead of zero so it logs what round just played
+        userSelelction = userInput();        // call user input function set to userSelection
+        console.log('you chose: ' + userSelection); // log user selection
+        compSelection = computerPlay();     // call computer play function set to Computer Play
+        console.log('Computer selected ' + compSelection); // log computer selection
+        playRound(userSelection,compSelection);
+        console.log('result: ' + result) 
+        console.log('userScore: ' + userScore) 
+        console.log('compScore: ' + compScore)
+        console.log('that was round ' + roundCount)
+        
+        // console.log(scoreBoard)
+    }
+
+    // after loops through 5 times runs function to log who won the match
+    gameWinner();
+    console.log('the winner of the game is......' + winner)
+}
+game();
