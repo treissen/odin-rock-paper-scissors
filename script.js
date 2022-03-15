@@ -80,4 +80,4 @@ function game(){
     gameWinner()
     console.log('the winner of the game is......' + winner) 
 }
-game(); // call game function
+// calling game() on click event
