@@ -34,29 +34,27 @@ function computerPlay() {
 
 function playRound(userSelection, compSelection) {
       
-    // if  statements checking who wins
-
-    if(userSelection === compSelection) {
-        result = 'this round is a tie'
-    } 
-    if(
-        (userSelection === "rock" && compSelection === "scissors") || 
-        (userSelection === "paper" && compSelection === "rock") ||
-        (userSelection === "scissors" && compSelection === "paper")
-    ) {
-        result =  'User wins this round'
-        ++userScore
-    }
-    if(
-        (userSelection === "scissors" && compSelection === "rock") || 
-        (userSelection === "rock" && compSelection === "paper") ||
-        (userSelection === "paper" && compSelection === "scissors")
-    ) {
-        result =  'computer wins this round';
-        ++compScore
-    }
-    return result 
-    }
+    switch (userSelection + compSelection) {
+        case 'scissorspaper':
+        case 'rockscissors':
+        case 'paperrock':
+            result =  'User wins this round'
+            ++userScore
+            break
+        case 'paperscissors':
+        case 'scissorsrock':
+        case 'rockpaper':
+            result =  'computer wins this round';
+            ++compScore
+            break
+        case 'scissorsscissors':
+        case 'rockrock':
+        case 'paperpaper':
+            result = 'this round is a tie'
+            break
+  }
+  return result
+}
 
 function gameWinner() {     //this will run after the game() loops 5 times and will log who won and final score
     if(compScore > userScore) {
