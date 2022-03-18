@@ -5,6 +5,14 @@ let userScore = 0
 let roundCount = 0
 let winner = ''
 
+const button = document.querySelectorAll('buttons')
+
+
+
+
+
+
+
 // computer choice
 
 function computerPlay() {
