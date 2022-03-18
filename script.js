@@ -81,3 +81,6 @@ function game(){
     console.log('the winner of the game is......' + winner) 
 }
 // calling game() on click event
+
+
+// test on github desktop
