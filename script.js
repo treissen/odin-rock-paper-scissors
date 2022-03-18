@@ -15,11 +15,12 @@ function computerPlay() {
 
 // user input
 
-function userInput() {
-    userPrompt = prompt('rock, paper, or scissors?');
-    userSelection = userPrompt.toLowerCase();
-    return userSelection
-}
+// function userInput() {
+//     userPrompt = prompt('rock, paper, or scissors?');
+//     userSelection = userPrompt.toLowerCase();
+//     return userSelection
+// }
+// change this to buttons
 
 // play one round
 
