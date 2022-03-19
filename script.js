@@ -9,12 +9,20 @@ const choices = ['rock', 'paper', 'scissors']
 
 const handleClick = (e) => {
     userSelection = e.target.value
-    game()
+    if(roundCount < 5) {
+        game()
+    }
+    if(roundCount === 5){
+        removeEventListener('click', handleClick, false);
+        gameWinner();
+        alert('winner: ' + winner)
+
+    }
     
 }
 
 for (var i = 0 ; i < choices.length; i++) {
-   addEventListener('click' ,handleClick); 
+   addEventListener('click' ,handleClick, true); 
 }
 
 
@@ -47,11 +55,10 @@ function playRound(userSelection, compSelection) {
             ++roundCount
             break
   }
-//   console.log(result)
   return result
 }
 
-function gameWinner() {     //this will run after the game() loops 5 times and will log who won and final score
+function gameWinner() {     
     if(compScore > userScore) {
         winner = 'computer';
     }
@@ -64,9 +71,7 @@ function gameWinner() {     //this will run after the game() loops 5 times and w
     return winner;
 }
 
-//  game() needs to loop through  playRound(userSelection, compSelection) 5 times
 function game(){
-    
     console.log('you chose: ' + userSelection);           
     compSelection = computerPlay();                       
     console.log('Computer selected ' + compSelection);    
@@ -75,10 +80,4 @@ function game(){
     console.log('userScore: ' + userScore)                
     console.log('compScore: ' + compScore)                
     console.log('that was round ' + roundCount)           
-    if(roundCount === 5){
-        gameWinner();
-        console.log('the winner of the game is......' + winner)
-    }    
 }
-
-// for(let roundCount = 1; roundCount < 6; roundCount++){}
