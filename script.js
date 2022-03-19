@@ -30,7 +30,7 @@ function computerPlay() {
 // }
 // change this to buttons
 
-// play one round
+
 
 function playRound(userSelection, compSelection) {
       
