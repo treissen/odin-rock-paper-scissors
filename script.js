@@ -4,14 +4,22 @@ let compScore = 0
 let userScore = 0
 let roundCount = 0
 let winner = ''
+let userSelection
 
-const button = document.querySelectorAll('buttons')
+const choices = ['rock', 'paper', 'scissors']
 
+const handleClick = (e) => {
+    userSelection = e.target.value
+    // console.log(userSelection)
+    computerPlay()
+    // console.log(compSelection)
+    playRound(userSelection, compSelection);
+    
+}
 
-
-
-
-
+for (var i = 0 ; i < choices.length; i++) {
+   addEventListener('click' ,handleClick); 
+ }
 
 // computer choice
 
