@@ -1,4 +1,7 @@
-//  global variables
+// need to add div that contains round information
+
+
+
 
 let compScore = 0
 let userScore = 0
@@ -13,16 +16,15 @@ const handleClick = (e) => {
         game()
     }
     if(roundCount === 5){
-        removeEventListener('click', handleClick, false);
+        removeEventListener('click', handleClick, false); //remoe eventlistener by setting to false if roundcount is 5
         gameWinner();
         alert('winner: ' + winner)
-
     }
     
 }
 
 for (var i = 0 ; i < choices.length; i++) {
-   addEventListener('click' ,handleClick, true); 
+   addEventListener('click' ,handleClick, true); //looping through choices array setting eventlistener to true
 }
 
 
