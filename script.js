@@ -19,6 +19,7 @@ const roundResultDiv = document.createElement('div');
 const refreshDiv = document.createElement('h2');
 
 
+
 //appending to html
 gameInfoDisp.appendChild(winnerDisp);
 gameInfoDisp.appendChild(compScoreDiv);
