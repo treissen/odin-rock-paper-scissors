@@ -1,4 +1,5 @@
 // need to add div that contains round information
+// need to change all console.logs into dom methods for display into the html page
 
 
 
@@ -11,14 +12,14 @@ let userSelection
 const choices = ['rock', 'paper', 'scissors']
 
 const handleClick = (e) => {
-    userSelection = e.target.value
+    userSelection = e.target.value;
     if(roundCount < 5) {
         game()
     }
-    if(roundCount === 5){
-        removeEventListener('click', handleClick, false); //remoe eventlistener by setting to false if roundcount is 5
+    if(roundCount >= 5){
+        removeEventListener('click', handleClick, false); //remove eventlistener by setting to false if roundcount is 5 or higher
         gameWinner();
-        alert('winner: ' + winner)
+        alert('winner: ' + winner + '!  refresh page to play again.')
     }
     
 }
