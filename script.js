@@ -9,6 +9,7 @@ const choices = ['rock', 'paper', 'scissors']
 //creating the divs
 
 const gameInfoDisp = document.querySelector('#gameInfo'); //main container
+
 const compScoreDiv = document.createElement('div');
 const userScoreDiv =document.createElement('div');
 const winnerDisp = document.createElement('div');
