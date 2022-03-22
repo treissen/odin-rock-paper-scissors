@@ -1,20 +1,29 @@
 /* create game styling */
 body {
     background-color: rgb(106, 111, 155);
+    min-width: 500px;
 }
 .header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-left: 25px;
     margin-right: 25px;
-    
+    margin-top: 25px;
+      
 }
 .aboutContainer {
     display: flex;
     flex-direction: column;
 }
+.about {
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+}
 .aboutList {
+    margin: 0px;
+    padding: 0px;
     list-style-type: none;
 }
 #mainContainer {
