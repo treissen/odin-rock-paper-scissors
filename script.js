@@ -7,18 +7,18 @@ const choices = ['rock', 'paper', 'scissors']
 
 
 //creating the divs
+const gameInfoArray = []
 
 const gameInfoDisp = document.querySelector('#gameInfo'); //main container
 const compScoreDiv = document.createElement('div');
 const userScoreDiv =document.createElement('div');
-const winnerDisp = document.createElement('h1');
+const winnerDisp = document.createElement('div');
 const roundCountDiv = document.createElement('div');
 const userSelectionDiv = document.createElement('div');
 const compSelectionDiv = document.createElement('div');
 const roundResultDiv = document.createElement('div');
-const refreshDiv = document.createElement('h2');
-
-
+const refreshDiv = document.createElement('div');
+ 
 
 //appending to html
 gameInfoDisp.appendChild(winnerDisp);
@@ -29,6 +29,14 @@ gameInfoDisp.appendChild(userSelectionDiv);
 gameInfoDisp.appendChild(compSelectionDiv);
 gameInfoDisp.appendChild(roundResultDiv);
 gameInfoDisp.appendChild(refreshDiv);
+
+// restart the game
+const reloadButton = document.querySelector('#reload');
+function reload() {
+    reload = location.reload();
+}
+reloadButton.addEventListener('click', reload, false);
+
 
 const handleClick = (e) => {
     userSelection = e.target.value;
@@ -41,16 +49,15 @@ const handleClick = (e) => {
         compSelectionDiv.textContent = 'Computer Selection: ' + compSelection
         roundResultDiv.textContent = 'Round Result: ' + result
         roundCountDiv.textContent = 'Round Count: ' + roundCount
-        
     }
     if(roundCount >= 5){
         removeEventListener('click', handleClick, false); //remove eventlistener by setting to false if roundcount is 5 or higher
         gameWinner();
         winnerDisp.textContent = 'Winner: ' + winner + '!';
-        refreshDiv.textContent = 'refresh the page to play again' ;
+        refreshDiv.textContent = 'refresh the page to play again' ; 
     }
-    
 }
+
 
 for (var i = 0 ; i < choices.length; i++) {
    addEventListener('click' ,handleClick, true); //looping through choices array setting eventlistener to true

@@ -14,7 +14,9 @@ body {
     gap: 25px;
     display: flex;
     align-items: center;
-    padding: 10px;
+    /* padding: 10px; */
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 #gameInfo {
     border: 5px solid black;
@@ -31,4 +33,8 @@ body {
 
 button {
     
+}
+
+#reload {
+    margin-top: 25px;
 }
