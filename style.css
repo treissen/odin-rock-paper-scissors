@@ -54,8 +54,8 @@ body {
     border-color: black;
     display: flex;
     flex-direction: column;
-    align-content: flex-start;
-    /* align-content: center; */
+    justify-content: center;
+    gap: 8px;
     padding: 10px;
     width: 400px;
     height: 250px;

@@ -7,7 +7,6 @@ const choices = ['rock', 'paper', 'scissors']
 
 
 //creating the divs
-const gameInfoArray = []
 
 const gameInfoDisp = document.querySelector('#gameInfo'); //main container
 const compScoreDiv = document.createElement('div');
@@ -17,7 +16,6 @@ const roundCountDiv = document.createElement('div');
 const userSelectionDiv = document.createElement('div');
 const compSelectionDiv = document.createElement('div');
 const roundResultDiv = document.createElement('div');
-const refreshDiv = document.createElement('div');
  
 
 //appending to html
@@ -28,7 +26,6 @@ gameInfoDisp.appendChild(roundCountDiv);
 gameInfoDisp.appendChild(userSelectionDiv);
 gameInfoDisp.appendChild(compSelectionDiv);
 gameInfoDisp.appendChild(roundResultDiv);
-gameInfoDisp.appendChild(refreshDiv);
 
 // restart the game
 const reloadButton = document.querySelector('#reload');
@@ -53,7 +50,6 @@ const handleClick = (e) => {
     if(roundCount >= 5){
         removeEventListener('click', handleClick, false); //remove eventlistener by setting to false if roundcount is 5 or higher
         gameWinner();
-        refreshDiv.textContent = 'refresh the page to play again' ; 
     }
 }
 
