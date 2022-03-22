@@ -16,27 +16,37 @@ const roundCountDiv = document.createElement('div');
 const userSelectionDiv = document.createElement('div');
 const compSelectionDiv = document.createElement('div');
 const roundResultDiv = document.createElement('div');
+const refreshDiv = document.createElement('h2');
 
 
 //appending to html
-
+gameInfoDisp.appendChild(winnerDisp);
 gameInfoDisp.appendChild(compScoreDiv);
 gameInfoDisp.appendChild(userScoreDiv);
 gameInfoDisp.appendChild(roundCountDiv);
 gameInfoDisp.appendChild(userSelectionDiv);
 gameInfoDisp.appendChild(compSelectionDiv);
-gameInfoDisp.appendChild(compScoreDiv);
 gameInfoDisp.appendChild(roundResultDiv);
+gameInfoDisp.appendChild(refreshDiv);
 
 const handleClick = (e) => {
     userSelection = e.target.value;
     if(roundCount < 5) {
-        game()
+        game();
+         // text to DOM
+        compScoreDiv.textContent = 'Computer Score: ' + compScore
+        userScoreDiv.textContent = 'User Score: ' + userScore
+        userSelectionDiv.textContent = 'User Selection: ' + userSelection
+        compSelectionDiv.textContent = 'Computer Selection: ' + compSelection
+        roundResultDiv.textContent = 'Round Result: ' + result
+        roundCountDiv.textContent = 'Round Count: ' + roundCount
+        
     }
     if(roundCount >= 5){
         removeEventListener('click', handleClick, false); //remove eventlistener by setting to false if roundcount is 5 or higher
         gameWinner();
-        alert('winner: ' + winner + '!  refresh page to play again.')
+        winnerDisp.textContent = 'Winner: ' + winner + '!';
+        refreshDiv.textContent = 'refresh the page to play again' ;
     }
     
 }
@@ -75,7 +85,7 @@ function playRound(userSelection, compSelection) {
             ++roundCount
             break
   }
-  return result
+  return result;
 }
 
 function gameWinner() {     
@@ -91,23 +101,7 @@ function gameWinner() {
     return winner;
 }
 
-function game(){
-    console.log('you chose: ' + userSelection);           
-    compSelection = computerPlay();                       
-    console.log('Computer selected ' + compSelection);    
+function game(){           
+    compSelection = computerPlay();                         
     playRound(userSelection,compSelection);               
-    console.log('result: ' + result)                      
-    console.log('userScore: ' + userScore)                
-    console.log('compScore: ' + compScore)                
-    console.log('that was round ' + roundCount)  
-    // text to DOM
-    compScoreDiv.textContent = 'Computer Score: ' + compScore
-    userScoreDiv.textContent = 'User Score: ' + userScore
-    userSelectionDiv.textContent = 'User Selection: ' + userSelection
-    compSelectionDiv.textContent = 'Computer Selection: ' + compSelection
-    roundResultDiv.textContent = 'Round Result: ' + result
-    roundCountDiv.textContent = 'Round Count: ' + roundCount
-
-
-
 }
