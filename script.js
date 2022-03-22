@@ -1,15 +1,32 @@
-// need to add div that contains round information
-// need to change all console.logs into dom methods for display into the html page
-
-
-
-
 let compScore = 0
 let userScore = 0
 let roundCount = 0
 let winner = ''
 let userSelection
 const choices = ['rock', 'paper', 'scissors']
+
+
+//creating the divs
+
+const gameInfoDisp = document.querySelector('#gameInfo'); //main container
+const compScoreDiv = document.createElement('div');
+const userScoreDiv =document.createElement('div');
+const winnerDisp = document.createElement('h1');
+const roundCountDiv = document.createElement('div');
+const userSelectionDiv = document.createElement('div');
+const compSelectionDiv = document.createElement('div');
+const roundResultDiv = document.createElement('div');
+
+
+//appending to html
+
+gameInfoDisp.appendChild(compScoreDiv);
+gameInfoDisp.appendChild(userScoreDiv);
+gameInfoDisp.appendChild(roundCountDiv);
+gameInfoDisp.appendChild(userSelectionDiv);
+gameInfoDisp.appendChild(compSelectionDiv);
+gameInfoDisp.appendChild(compScoreDiv);
+gameInfoDisp.appendChild(roundResultDiv);
 
 const handleClick = (e) => {
     userSelection = e.target.value;
@@ -82,5 +99,15 @@ function game(){
     console.log('result: ' + result)                      
     console.log('userScore: ' + userScore)                
     console.log('compScore: ' + compScore)                
-    console.log('that was round ' + roundCount)           
+    console.log('that was round ' + roundCount)  
+    // text to DOM
+    compScoreDiv.textContent = 'Computer Score: ' + compScore
+    userScoreDiv.textContent = 'User Score: ' + userScore
+    userSelectionDiv.textContent = 'User Selection: ' + userSelection
+    compSelectionDiv.textContent = 'Computer Selection: ' + compSelection
+    roundResultDiv.textContent = 'Round Result: ' + result
+    roundCountDiv.textContent = 'Round Count: ' + roundCount
+
+
+
 }
