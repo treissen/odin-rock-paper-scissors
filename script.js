@@ -53,7 +53,6 @@ const handleClick = (e) => {
     if(roundCount >= 5){
         removeEventListener('click', handleClick, false); //remove eventlistener by setting to false if roundcount is 5 or higher
         gameWinner();
-        winnerDisp.textContent = 'Winner: ' + winner + '!';
         refreshDiv.textContent = 'refresh the page to play again' ; 
     }
 }
@@ -106,10 +105,14 @@ function gameWinner() {
     if(compScore === userScore) {
         winner = 'tie';
     }
-    return winner;
+    // alerting winner after slight delay so html updates game info first
+    setTimeout(() => { alert('Winner: '+ winner + '!') }, 100);
+   
 }
 
 function game(){           
     compSelection = computerPlay();                         
     playRound(userSelection,compSelection);               
 }
+
+
