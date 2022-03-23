@@ -12,20 +12,7 @@ body {
     margin-top: 25px;
     margin-bottom: 50px;
 }
-.aboutContainer {
-    display: flex;
-    flex-direction: column;
-}
-.about {
-    display: flex;
-    font-size: 20px;
-    justify-content: center;
-}
-.aboutList {
-    margin: 0px;
-    padding: 0px;
-    list-style-type: none;
-}
+
 #mainContainer {
     display:flex;
     flex-direction: column;
