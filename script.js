@@ -9,6 +9,8 @@ const choices = ['rock', 'paper', 'scissors']
 //creating the divs
 
 const gameInfoDisp = document.querySelector('#gameInfo'); //main container
+const userInfoDisp = document.querySelector('#userInfo');
+const compInfoDisp = document.querySelector('#compInfo')
 
 const compScoreDiv = document.createElement('div');
 const userScoreDiv =document.createElement('div');
@@ -25,7 +27,7 @@ gameInfoDisp.appendChild(compScoreDiv);
 gameInfoDisp.appendChild(userScoreDiv);
 gameInfoDisp.appendChild(roundCountDiv);
 gameInfoDisp.appendChild(userSelectionDiv);
-gameInfoDisp.appendChild(compSelectionDiv);
+compInfoDisp.appendChild(compSelectionDiv);
 gameInfoDisp.appendChild(roundResultDiv);
 
 // restart the game
