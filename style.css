@@ -18,6 +18,10 @@ body {
 input {
     width: 150px;
     height: auto;
+    padding: 15px;
+    border: 3px solid black;
+    border-radius: 10px;
+    border-color: black;
 }
 #mainContainer {
     display:flex;
