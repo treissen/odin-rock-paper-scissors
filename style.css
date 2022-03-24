@@ -5,7 +5,9 @@
     transition-timing-function:ease;
 }
 body {
-    background-color: rgba(1, 11, 98, 0.568);
+    color: azure;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgba(23, 8, 36, 0.945);
     min-width: 500px;
     margin: 0 0 0 0;
 }
@@ -13,12 +15,13 @@ body {
     width: 100%;
     text-align: center;
     padding: 25px;
-    background-color: rgba(19, 255, 235, 0.219);
-    border: solid black 2px;
+    background-color: #033530c9;
+    border: solid #42023a 2px;
     box-shadow: inset 0 0 100px rgba(3, 3, 3, 0.363), 0 0 50px rgba(240, 8, 8, 0.137);
 }
 .header {
     font-size: 50px;
+    font-weight: bolder;
 }
 .footer {
     position: absolute;
@@ -28,7 +31,7 @@ input {
     width: 150px;
     height: auto;
     padding: 15px;
-    border-radius: 35px;
+    border-radius: 20px;
     transition: all 400ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 #mainContainer {
@@ -51,18 +54,20 @@ input {
     justify-content: center;
     height: 200px;
     width: 350px;
-    border: 2px solid black;
+    border: solid #42023a 2px;
     border-radius: 15px;
-    border-color: black;
     margin-top: 50px;
     gap: 10px;
+    background-color: #032925c9;
+    box-shadow: inset 0 0 25px #42023a, 0 0 30px #033530c9;
+    
 }
 #reload {
     margin-top: 25px;
 }
 input:hover {
-    box-shadow: inset 0 0 100px rgba(3, 3, 3, 0.5), 0 0 50px rgba(240, 8, 8, 0.329);
+    box-shadow: inset 0 0 25px #42023a, 0 0 30px #033530c9;
 }
 #reload:hover {
-    box-shadow: inset 0 0 10px rgba(3, 3, 3, 0.561), 0 0 8px rgba(240, 8, 8, 0.541);   
+    box-shadow: inset 0 0 10px rgba(3, 3, 3, 0.561), 0 0 8px #033530c9;   
 }
