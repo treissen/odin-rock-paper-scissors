@@ -25,7 +25,7 @@ gameInfoDisp.appendChild(compScoreDiv);
 gameInfoDisp.appendChild(userScoreDiv);
 gameInfoDisp.appendChild(roundCountDiv);
 gameInfoDisp.appendChild(userSelectionDiv);
-compInfoDisp.appendChild(compSelectionDiv);
+gameInfoDisp.appendChild(compSelectionDiv);
 gameInfoDisp.appendChild(roundResultDiv);
 
 // restart the game
